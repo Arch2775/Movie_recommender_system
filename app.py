@@ -33,7 +33,16 @@ movies=pd.DataFrame(movies_dict)
 
 similarity=pickle.load(open('similarity.pkl', 'rb'))
 
-st.title('Movie Recommender System')
+title_html = """
+    <div style="display: flex; align-items: center;">
+        <img src="https://cdn.dribbble.com/users/625592/screenshots/4497986/ica-dribbble.gif" alt="Movie Icon" width="75" height="75" style="margin-right: 10px;">
+        <h1 style="margin: 0;">Movie Recommender System</h1>
+    </div>
+"""
+st.markdown(title_html, unsafe_allow_html=True)
+
+
+#st.title('Movie Recommender System')
 
 
 selected_movie_name=st.selectbox('Enter the movie: ',movies['title'].values)
